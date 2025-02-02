@@ -1,5 +1,21 @@
+name: Example Workflow with Email in Step Name
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  test:
+  example-job:
+    runs-on: ubuntu-latest
+
     steps:
-        name: 21f3001999@ds.study.iitm.ac.in
-        run: echo "Hello, world!"
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Step containing my email 21f3001999@ds.study.iitm.ac.in
+      run: echo "This step contains my email address."
+      
+    - name: Run a script
+      run: echo "Hello, this is another step in the action."
+
